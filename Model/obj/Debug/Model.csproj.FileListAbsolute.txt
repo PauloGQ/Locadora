@@ -1,0 +1,56 @@
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\bin\Debug\Model.dll
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\bin\Debug\Model.pdb
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\bin\Debug\Google.Protobuf.dll
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\bin\Debug\MySql.Data.dll
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\bin\Debug\Renci.SshNet.dll
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\bin\Debug\Google.Protobuf.xml
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\bin\Debug\MySql.Data.xml
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\bin\Debug\Renci.SshNet.xml
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\obj\Debug\Model.dll
+C:\Users\Uniplan\source\repos\ProjetoLocadoraAtual\Model\obj\Debug\Model.pdb
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Model.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Model.pdb
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Google.Protobuf.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\MySql.Data.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Renci.SshNet.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Google.Protobuf.xml
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\MySql.Data.xml
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Renci.SshNet.xml
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.pdb
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Model.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Model.pdb
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Google.Protobuf.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\MySql.Data.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Renci.SshNet.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Google.Protobuf.xml
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\MySql.Data.xml
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Renci.SshNet.xml
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.dll
+C:\Users\Uniplan\Downloads\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.pdb
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Model.dll
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Model.pdb
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Google.Protobuf.dll
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\MySql.Data.dll
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Renci.SshNet.dll
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Google.Protobuf.xml
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\MySql.Data.xml
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\bin\Debug\Renci.SshNet.xml
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.csproj.CopyComplete
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.dll
+C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Model\obj\Debug\Model.pdb
