@@ -30,3 +30,19 @@ C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\Pro
 C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Service\obj\Debug\Service.csproj.CopyComplete
 C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Service\obj\Debug\Service.dll
 C:\Users\paulo\Desktop\ProjetoLocadoraAtual14102019 (1)\ProjetoLocadoraAtual\ProjetoLocadoraAtual\Service\obj\Debug\Service.pdb
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Service.dll
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Service.pdb
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Google.Protobuf.dll
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Model.dll
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\MySql.Data.dll
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Renci.SshNet.dll
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Model.pdb
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Google.Protobuf.xml
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\MySql.Data.xml
+C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Renci.SshNet.xml
+C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.csprojAssemblyReference.cache
+C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
+C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.csproj.CopyComplete
+C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.dll
+C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.pdb

@@ -3,52 +3,61 @@
 @{
     ViewBag.Title = "Index";
 }
+    <div class="row">
+        <div class="col-sm-9 align-middle">
+            <h2>Listagem de Clientes</h2>
+        </div>
+        <div class="col-sm-0 align-content-md-center">
+            <h3 class="ml-5">
+                @Html.ActionLink("Novo Cliente", "inserir")
+            </h3>
+            </div>
+        </div>
 
-<h2>Index</h2>
+        <table class="table my-4">
+            <tr>
+                <th style="border-top: 0px">
+                    @Html.DisplayNameFor(model => model.IdCliente)
+                </th>   
+                <th  style="border-top: 0px">
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th style="border-top: 0px">
+                    @Html.DisplayNameFor(model => model.DataNascimento)
+                </th>
+                <th style="border-top: 0px">
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th style="border-top: 0px">
+                    @Html.DisplayNameFor(model => model.Cpf)
+                </th>
+                <thstyle="border-top: 0px"></thstyle="border-top:>
+            </tr>
 
-<p>
-    @Html.ActionLink("Create New", "inserir")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DataNascimento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cpf)
-        </th>
-        <th></th>
-    </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IdCliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataNascimento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Cpf)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Editar", new { id = item.IdCliente }) |
+                        @Html.ActionLink("Detalhes", "Visualizar", new { id = item.IdCliente }) |
+                        @Html.ActionLink("Excluir", "Excluir", new { id = item.IdCliente })
+                    </td>
+                </tr>
+            }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IdCliente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DataNascimento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cpf)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Editar", new { id=item.IdCliente }) |
-            @Html.ActionLink("Details", "Visualizar", new { id=item.IdCliente }) |
-            @Html.ActionLink("Delete", "Excluir", new { id=item.IdCliente })
-        </td>
-    </tr>
-}
-
-</table>
+        </table>
