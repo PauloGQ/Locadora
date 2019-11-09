@@ -3,61 +3,61 @@
 @{
     ViewBag.Title = "Index";
 }
-    <div class="row">
-        <div class="col-sm-9 align-middle">
-            <h2>Listagem de Clientes</h2>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">
+            <a href="@Url.Action("Index", "Home/inserir")"
+               class="btn btn-success btn-icon-split">
+                <span class="icon text-white-50">
+                    <i class="fas fa-check"></i>
+                </span>
+                <span class="text">Novo Cliente</span>
+            </a>
+        </h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="text-center">@Html.DisplayNameFor(model => model.IdCliente)</th>
+                        <th> @Html.DisplayNameFor(model => model.Nome)</th>
+                        <th> @Html.DisplayNameFor(model => model.DataNascimento)</th>
+                        <th>@Html.DisplayNameFor(model => model.Email)</th>
+                        <th>@Html.DisplayNameFor(model => model.Cpf)</th>
+                        <th class="text-center">Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+
+                            <td class="text-center">@Html.DisplayFor(modelItem => item.IdCliente)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Nome)</td>
+                            <td>@Html.DisplayFor(modelItem => item.DataNascimento)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Cpf)</td>
+                            <td class="text-center">
+
+                                <a href="@Url.Action("Editar", "Home", new { id = item.IdCliente })" class="btn btn-success btn-circle btn-sm">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </a>
+                                <a href="@Url.Action("Visualizar", "Home", new { id = item.IdCliente })" class="btn btn-warning btn-circle btn-sm">
+                                    <i class="fas fa-info"></i>
+                                </a>
+                                <a href="@Url.Action("Excluir", "Home", new { id = item.IdCliente })" class="btn btn-danger btn-circle btn-sm">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
         </div>
-        <div class="col-sm-0 align-content-md-center">
-            <h3 class="ml-5">
-                @Html.ActionLink("Novo Cliente", "inserir")
-            </h3>
-            </div>
-        </div>
+    </div>
+</div>
 
-        <table class="table my-4">
-            <tr>
-                <th style="border-top: 0px">
-                    @Html.DisplayNameFor(model => model.IdCliente)
-                </th>   
-                <th  style="border-top: 0px">
-                    @Html.DisplayNameFor(model => model.Nome)
-                </th>
-                <th style="border-top: 0px">
-                    @Html.DisplayNameFor(model => model.DataNascimento)
-                </th>
-                <th style="border-top: 0px">
-                    @Html.DisplayNameFor(model => model.Email)
-                </th>
-                <th style="border-top: 0px">
-                    @Html.DisplayNameFor(model => model.Cpf)
-                </th>
-                <thstyle="border-top: 0px"></thstyle="border-top:>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IdCliente)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Nome)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.DataNascimento)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Email)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Cpf)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Editar", "Editar", new { id = item.IdCliente }) |
-                        @Html.ActionLink("Detalhes", "Visualizar", new { id = item.IdCliente }) |
-                        @Html.ActionLink("Excluir", "Excluir", new { id = item.IdCliente })
-                    </td>
-                </tr>
-            }
-
-        </table>
