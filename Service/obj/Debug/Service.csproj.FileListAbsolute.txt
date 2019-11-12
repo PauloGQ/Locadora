@@ -42,7 +42,6 @@ C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Google.Protobuf.xml
 C:\Users\paulo\workspace\Locadora\Service\bin\Debug\MySql.Data.xml
 C:\Users\paulo\workspace\Locadora\Service\bin\Debug\Renci.SshNet.xml
 C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.csprojAssemblyReference.cache
-C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
 C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.csproj.CopyComplete
 C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.dll
 C:\Users\paulo\workspace\Locadora\Service\obj\Debug\Service.pdb

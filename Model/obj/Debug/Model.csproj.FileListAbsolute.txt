@@ -64,7 +64,6 @@ C:\Users\paulo\workspace\Locadora\Model\bin\Debug\Google.Protobuf.xml
 C:\Users\paulo\workspace\Locadora\Model\bin\Debug\MySql.Data.xml
 C:\Users\paulo\workspace\Locadora\Model\bin\Debug\Renci.SshNet.xml
 C:\Users\paulo\workspace\Locadora\Model\obj\Debug\Model.csprojAssemblyReference.cache
-C:\Users\paulo\workspace\Locadora\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\paulo\workspace\Locadora\Model\obj\Debug\Model.csproj.CopyComplete
 C:\Users\paulo\workspace\Locadora\Model\obj\Debug\Model.dll
 C:\Users\paulo\workspace\Locadora\Model\obj\Debug\Model.pdb

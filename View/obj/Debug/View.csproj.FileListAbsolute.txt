@@ -258,7 +258,6 @@ C:\Users\paulo\workspace\Locadora\View\bin\pt-br\System.Web.Webpages.Razor.resou
 C:\Users\paulo\workspace\Locadora\View\bin\pt-br\System.Web.Helpers.resources.dll
 C:\Users\paulo\workspace\Locadora\View\bin\pt-br\System.Web.Mvc.resources.dll
 C:\Users\paulo\workspace\Locadora\View\obj\Debug\View.csprojAssemblyReference.cache
-C:\Users\paulo\workspace\Locadora\View\obj\Debug\View.csproj.CoreCompileInputs.cache
 C:\Users\paulo\workspace\Locadora\View\obj\Debug\View.csproj.CopyComplete
 C:\Users\paulo\workspace\Locadora\View\obj\Debug\View.dll
 C:\Users\paulo\workspace\Locadora\View\obj\Debug\View.pdb
