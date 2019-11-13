@@ -1,36 +1,116 @@
 ﻿@model Model.Cliente
 
 @{
+    Layout = null;
     ViewBag.Title = "Excluir";
 }
+
 <div class="modal-dialog">
+    <div class="modal-dialog " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title text-center text-danger" id="exampleModalLabel">Tem certeza de que deseja excluir este registro?</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
+            </div>
+
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label">@Html.DisplayNameFor(model => model.IdCliente)</label>
+                    <input type="text" class="form-control" id="recipient-id" disabled="disabled" value="@Html.DisplayFor(model => model.IdCliente)">
+                </div>
+
+                <div class="form-group">
+                    <label for="message-text" class="control-label">@Html.DisplayNameFor(model => model.Nome)</label>
+                    <input type="text" class="form-control" id="recipient-nome" disabled="disabled" value="@Html.DisplayFor(model => model.Nome)">
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label">@Html.DisplayNameFor(model => model.DataNascimento)</label>
+                    <input type="text" class="form-control" id="recipient-data" disabled="disabled" value="@Html.DisplayFor(model => model.DataNascimento)">
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label">@Html.DisplayNameFor(model => model.Email)</label>
+                    <p class="input-group-text disabled">@Html.DisplayFor(model => model.Email)</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label">@Html.DisplayNameFor(model => model.Cpf)</label>
+                    <input type="text" class="form-control" id="recipient-cpf" disabled="disabled" value="@Html.DisplayFor(model => model.Cpf)">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Excluir" class="btn btn-danger" /> 
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div class="modal-dialog " role="document">
     <div class="modal-content">
         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">
-                <span aria-hidden="true">×</span><span class="sr-only">Close</span>
-            </button>
-            <h4 class="modal-title">Deseja deletar este cliente ?</h4>
+            <h4 class="modal-title text-center text-danger" id="exampleModalLabel"></h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
         </div>
+
         <div class="modal-body">
-            <hr />
-            <dl class="dl-horizontal">
-                <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
-                <dd>@Html.DisplayFor(model => model.Nome)</dd>
-                <dt>@Html.DisplayNameFor(model => model.Email)</dt>
-                <dd>@Html.DisplayFor(model => model.Email)</dd>
-            </dl>
+            <form id="formDelete">
+                <p> Deseja realmente excluir o cliente <strong>@Html.DisplayFor(model => model.Nome)</strong>?</p>
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label">@Html.DisplayNameFor(model => model.IdCliente)</label>
+                    <input type="text" class="form-control" id="recipient-id" disabled="disabled">
+                </div>
+
+                <div class="form-group">
+                    <label for="message-text" class="control-label">@Html.DisplayNameFor(model => model.Nome)</label>
+                    <input type="text" class="form-control" id="recipient-nome" disabled="disabled">
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label">@Html.DisplayNameFor(model => model.DataNascimento)</label>
+                    <input type="text" class="form-control" id="recipient-data" disabled="disabled">
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label">@Html.DisplayNameFor(model => model.Email)</label>
+                    <input type="text" class="form-control" id="recipient-email" disabled="disabled">
+                </div>
+
+                <div class="form-group">
+                    <label for="recipient-name" class="control-label">@Html.DisplayNameFor(model => model.Cpf)</label>
+                    <input type="text" class="form-control" id="recipient-cpf" disabled="disabled">
+                </div>
+
+
+            </form>
         </div>
         <div class="modal-footer">
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-                <div class="form-actions no-color">
-                    <input type="submit" value="Deletar" class="btn btn-succcess" />
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                </div>
-            }
+
+            <div>
+                <button class="ui-state-default ui-corner-all" id="btnDelete">Excluir</button>
+                <button class="ui-state-default ui-corner-all" id="btnClose">Cancelar</button>
+            </div>
+
         </div>
-    </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-
-
+    </div>
+</div>
