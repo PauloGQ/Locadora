@@ -59,8 +59,8 @@ namespace Service
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
 
-                    string query = $"SELECT IdCliente, Nome, DataNascimento, Email,Cpf FROM cliente WHERE IdCliente = {id}";
-                    
+                    string query = $"SELECT * FROM cliente c JOIN telefone t ON c.IdCliente = t.IdClienteFkTelefone JOIN endereco e ON c.IdCliente = e.IdClienteFkEndereco WHERE c.IdCliente = {id}"; 
+
                     cmd.Connection = conn;
                     cmd.CommandText = query;
 
@@ -76,6 +76,20 @@ namespace Service
                         retorno.DataNascimento = (DateTime)reader["DataNascimento"];
                         retorno.Email = (string)reader["Email"];
                         retorno.Cpf = (string)reader["Cpf"];
+                        retorno.IdTelefone = (int)reader["IdTelefone"];
+                        retorno.TipoTelefone = (string)reader["TipoTelefone"];
+                        retorno.Ddd = (string)reader["Ddd"];
+                        retorno.NumeroTel = (string)reader["NumeroTel"];
+                        retorno.IdClienteFkTelefone = (int)reader["IdClienteFkTelefone"];
+                        retorno.IdEndereco = (int)reader["IdEndereco"];
+                        retorno.Cep = (string)reader["Cep"]; 
+                        retorno.Cidade = (string)reader["Cidade"];
+                        retorno.Estado = (string)reader["Estado"];
+                        retorno.Bairro = (string)reader["Bairro"];
+                        retorno.Logradouro = (string)reader["Logradouro"];
+                        retorno.Numero = (string)reader["Numero"];
+                        retorno.Complemento = (string)reader["Complemento"];
+                        retorno.IdClienteFkEndereco = (int)reader["IdClienteFkEndereco"];
 
                     }
 
@@ -86,7 +100,7 @@ namespace Service
 
         public void Inserir(Cliente registro)
         {
-            string strConexao = "SERVER=localhost; DataBase=locadora; UID=root; pwd=";
+            string strConexao = "SERVER=localhost; DataBase=locadora;Allow User Variables=True; UID=root; pwd=";
 
             using (MySqlConnection conn = new MySqlConnection(strConexao))
             {
@@ -94,13 +108,14 @@ namespace Service
 
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
-                    string query = $"INSERT INTO cliente (IdCliente, Nome, DataNascimento, Email, Cpf ) VALUES ('{registro.IdCliente}','{registro.Nome}', '{registro.DataNascimento:yyyy-MM-dd}', '{registro.Email}', '{registro.Cpf}')";
+                    string query = $"INSERT INTO cliente (IdCliente, Nome, DataNascimento, Email, Cpf ) VALUES ('{registro.IdCliente}', '{registro.Nome}', '{registro.DataNascimento:yyyy-MM-dd}', '{registro.Email}', '{registro.Cpf}'); SET @var = LAST_INSERT_ID(); INSERT INTO telefone(IdTelefone, TipoTelefone, Ddd, NumeroTel, IdClienteFkTelefone) VALUES('{registro.IdTelefone}', '{registro.TipoTelefone}', '{registro.Ddd}', '{registro.NumeroTel}', @var); INSERT INTO endereco(IdEndereco, Cep, Cidade, Estado, Bairro, Logradouro, Numero, Complemento, IdClienteFkEndereco) VALUES('{registro.IdEndereco}', '{registro.Cep}', '{registro.Cidade}', '{registro.Estado}', '{registro.Bairro}', '{registro.Logradouro}', '{registro.Numero}', '{registro.Complemento}', @var);";
 
                     cmd.Connection = conn;
                     cmd.CommandText = query;
-
                     cmd.ExecuteNonQuery();
+                        
                 }
+
             }
         }
 
@@ -114,12 +129,29 @@ namespace Service
 
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
-                    string query = $@"UPDATE cliente SET
-                                    Nome = '{registro.Nome}',
-                                    DataNascimento = '{registro.DataNascimento:yyyy-MM-dd}',
-                                    Email = '{registro.Email}',
-                                    Cpf = '{registro.Cpf}'
-                                    WHERE IdCliente = {registro.IdCliente}";
+                    string query = $@"UPDATE cliente c SET 
+                                    c.Nome = '{registro.Nome}',
+                                    c.DataNascimento = '{registro.DataNascimento:yyyy-MM-dd}',
+                                    c.Email = '{registro.Email}',
+                                    c.Cpf = '{registro.Cpf}'
+                                    WHERE c.IdCliente = {registro.IdCliente};                                    
+
+
+                                    UPDATE telefone t SET
+                                    t.TipoTelefone = '{registro.TipoTelefone}',
+                                    t.Ddd = '{registro.Ddd}',
+                                    t.NumeroTel = '{registro.NumeroTel}'
+                                    WHERE t.IdClienteFkTelefone = {registro.IdCliente};
+                                    
+                                    UPDATE endereco e SET
+                                    e.Cep = '{registro.Cep}',
+                                    e.Cidade = '{registro.Cidade}',
+                                    e.Estado = '{registro.Estado}',
+                                    e.Bairro = '{registro.Bairro}',
+                                    e.Logradouro = '{registro.Logradouro}',
+                                    e.numero = '{registro.Numero}',
+                                    e.Complemento = '{registro.Complemento}'
+                                    WHERE e.IdClienteFkEndereco = {registro.IdCliente};";
 
                     cmd.Connection = conn;
                     cmd.CommandText = query;

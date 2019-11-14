@@ -28,6 +28,46 @@ namespace Model
         [Display(Name = "CPF")]
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         public string Cpf { get; set; }
+
+        [Display(Name = "ID Telefone")]
+        public int IdTelefone { get; set; }
+
+        [Display(Name = "Tipo de Telefone")]
+        public string TipoTelefone { get; set; }
+
+        [Display(Name = "DDD")]
+        public string Ddd { get; set; }
+
+        [Display(Name = "Número")]
+        [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        public string NumeroTel { get; set; }
+
+        [Display(Name = "ID Cliente")]
+        public int IdClienteFkTelefone { get; set; }
+
+        [Display(Name = "ID Endereço")]
+        public int IdEndereco { get; set; }
+
+        [Display(Name = "CEP")]
+        public string Cep { get; set; }
+
+        public string Cidade { get; set; }
+
+        public string Estado { get; set; }
+
+        public string Bairro { get; set; }
+
+        public string Logradouro { get; set; }
+        [Display(Name = "Número")]
+
+        public string Numero { get; set; }
+
+        public string Complemento { get; set; }
+
+        public int IdClienteFkEndereco { get; set; }
+
+
+
     }
 
 
