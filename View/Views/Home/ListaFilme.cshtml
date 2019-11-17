@@ -1,0 +1,186 @@
+﻿@model IEnumerable<Model.Filme>
+
+@{
+    ViewBag.Title = "ListaFilme";
+}
+<link href="~/content/Style.css" rel="stylesheet">
+
+<h2 class="alert-dark text-center">
+    @Html.ActionLink("Cadastrar Novo Filme", "Create")
+</h2>
+
+<!-- SESSÃO DE FILMES DE ACÃO ID 2 -->
+<div class="contain">
+    <div class="slider">
+        <h3>Ação</h3>
+        <span onmouseover="scrollEsquerda()" onmouseout="clearScroll()" class="handle handlePrev active">
+            <i class="fa fa-caret-left centralizar" aria-hidden="true"></i>
+        </span>
+
+        <div id="scroller" class="row">
+            <div class="row__inner">
+                @foreach (var item in Model)
+                {
+                    if (item.IdGeneroFkFilme == 2)
+                    {
+                        <div class="gui-card">
+                            <div class="gui-card__media">
+
+                                <td>
+                                    @{
+                                        var base64 = Convert.ToBase64String(item.Imagem);
+                                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                                    }
+                                    <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
+                                </td>
+
+                            </div>
+                            <div class="gui-card__details">
+                                <div class="gui-card__title">
+                                    @Html.DisplayFor(modelItem => item.NomeFilme)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+        <span onmouseover="scrollDireita()" onmouseout="clearScroll()" class="handle handleNext active">
+            <i class="fa fa-caret-right centralizar" aria-hidden="true"></i>
+        </span>
+    </div>
+</div>
+
+
+
+<!-- SESSÃO DE FILMES DE AVENTURA ID 1 -->
+<div class="contain">
+    <div class="slider">
+        <h3>Aventura</h3>
+        <span onmouseover="scrollEsquerda1()" onmouseout="clearScroll1()" class="handle handlePrev active">
+            <i class="fa fa-caret-left centralizar" aria-hidden="true"></i>
+        </span>
+
+        <div id="scroller1" class="row">
+            <div class="row__inner">
+                @foreach (var item in Model)
+                {
+                    if (item.IdGeneroFkFilme == 1)
+                    {
+                        <div class="gui-card">
+                            <div class="gui-card__media">
+
+                                <td>
+                                    @{
+                                        var base64 = Convert.ToBase64String(item.Imagem);
+                                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                                    }
+                                    <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
+                                </td>
+
+                            </div>
+                            <div class="gui-card__details">
+                                <div class="gui-card__title">
+                                    @Html.DisplayFor(modelItem => item.NomeFilme)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+        <span onmouseover="scrollDireita1()" onmouseout="clearScroll1()" class="handle handleNext active">
+            <i class="fa fa-caret-right centralizar" aria-hidden="true"></i>
+        </span>
+    </div>
+</div>
+
+
+<!-- SESSÃO DE FILMES DE TERROR ID 3 -->
+<div class="contain">
+    <div class="slider">
+        <h3>Terror</h3>
+        <span onmouseover="scrollEsquerda2()" onmouseout="clearScroll2()" class="handle handlePrev active">
+            <i class="fa fa-caret-left centralizar" aria-hidden="true"></i>
+        </span>
+
+        <div id="scroller2" class="row">
+            <div class="row__inner">
+                @foreach (var item in Model)
+                {
+                    if (item.IdGeneroFkFilme == 3)
+                    {
+                        <div class="gui-card">
+                            <div class="gui-card__media">
+
+                                <td>
+                                    @{
+                                        var base64 = Convert.ToBase64String(item.Imagem);
+                                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                                    }
+                                    <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
+                                </td>
+
+                            </div>
+                            <div class="gui-card__details">
+                                <div class="gui-card__title">
+                                    @Html.DisplayFor(modelItem => item.NomeFilme)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+        <span onmouseover="scrollDireita2()" onmouseout="clearScroll2()" class="handle handleNext active">
+            <i class="fa fa-caret-right centralizar" aria-hidden="true"></i>
+        </span>
+    </div>
+</div>
+
+
+<!-- SESSÃO DE FILMES DE INFANTIL ID 4 -->
+<div class="contain">
+    <div class="slider">
+        <h3>Infantil</h3>
+        <span onmouseover="scrollEsquerda3()" onmouseout="clearScroll3()" class="handle handlePrev active">
+            <i class="fa fa-caret-left centralizar" aria-hidden="true"></i>
+        </span>
+
+        <div id="scroller3" class="row">
+            <div class="row__inner">
+                @foreach (var item in Model)
+                {
+                    if (item.IdGeneroFkFilme == 4)
+                    {
+                        <div class="gui-card">
+                            <div class="gui-card__media">
+
+                                <td>
+                                    @{
+                                        var base64 = Convert.ToBase64String(item.Imagem);
+                                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                                    }
+                                    <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
+                                </td>
+
+                            </div>
+                            <div class="gui-card__details">
+                                <div class="gui-card__title">
+                                    @Html.DisplayFor(modelItem => item.NomeFilme)
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+        <span onmouseover="scrollDireita3()" onmouseout="clearScroll3()" class="handle handleNext active">
+            <i class="fa fa-caret-right centralizar" aria-hidden="true"></i>
+        </span>
+    </div>
+</div>

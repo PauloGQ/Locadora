@@ -29,7 +29,7 @@
         <ul class="navbar-nav bg-gray-700 sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="home.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="@Url.Action("Index", "Home")">
                 <div class="sidebar-brand-icon ml-1">
                     <img src="~/img/Logo_Solo.png"></i>
                 </div>
@@ -40,9 +40,9 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="home.html">
-                    <i class="fa fa-home"></i>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="@Url.Action("Index", "Home")">
+                    <i class="fas fa-home"></i>
                     <span>Home</span>
                 </a>
             </li>
@@ -50,103 +50,32 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Item de Navegação - Locação -->
+            <!-- Item de Navegação - Filme  -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
-                   aria-controls="collapseTwo">
-                    <i class="fa fa-users"></i>
-                    <span>Moradores</span>
+                <a class="nav-link collapsed" href="@Url.Action("ListaFilme", "Home")">
+                    <i class="fas fa-film"></i>
+                    <span>Filmes</span>
                 </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-gray-700 py-2 collapse-inner rounded">
-                        <a class="collapse-item text-gray-100" href="usuario-consulta.html">
-                            <i class="fas fa-search"></i>
-                            Consulta
-                        </a>
-                        <a class="collapse-item text-gray-100" href="automovel.html"> <i class="fas fa-car"></i> Automóvel</a>
-                    </div>
-                </div>
             </li>
 
-            <!-- Nav Item - Utilities Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                   aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-newspaper"></i>
-                    <span>Classificados</span>
-                </a>
-                </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-gray-700 py-2 collapse-inner rounded">
-                        <a class="collapse-item text-gray-100" href="anuncios.html">
-                            <i class="fas fa-newspaper"></i>
-                            Anúncios
-                        </a>
-                        <a class="collapse-item text-gray-100" href="meus-anuncios.html">
-                            <i class="far fa-newspaper"></i> Meus
-                            Anúncios
-                        </a>
 
-                    </div>
-                </div>
-            </li>
 
-            <!-- Nav Item - Charts -->
+            <!-- Item de Navegação - Clientes -->
             <li class="nav-item">
-                <a class="nav-link" href="visitante.html">
+                <a class="nav-link collapsed" href="@Url.Action("Index", "Home")">
                     <i class="fas fa-user"></i>
-                    <span>Visitantes</span>
+                    <span>Clientes</span>
                 </a>
             </li>
 
-            <!-- Nav Item - Charts -->
             <li class="nav-item">
-                <a class="nav-link" href="financeiro.html">
-                    <i class="fas fa-hand-holding-usd"></i>
-                    <span>Financeiro</span>
+                <a class="nav-link collapsed" href="@Url.Action("Index", "Home")">
+                    <i class="fas fa-users"></i>
+                    <span>Locação</span>
                 </a>
             </li>
 
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="reserva.html">
-                    <i class="far fa-calendar-alt"></i>
-                    <span>Reservas</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="correspondencia.html">
-                    <i class="fas fa fa-ticket-alt"></i>
-                    <span>Correspondência</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="comunicado.html">
-                    <i class="far fa-comment-alt"></i>
-                    <span>Comunicados</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="emergencia.html">
-                    <i class="fas fa-exclamation-circle"></i>
-                    <span>Emergencia</span>
-                </a>
-            </li>
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="ocorrencia.html">
-                    <i class="fas fa-book"></i>
-                    <span>Livro de Ocorrência</span>
-                </a>
-            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -348,6 +277,9 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
+
+
+    <script src="~/Scripts/Index.js"></script>
     <script src="~/vendor/jquery/jquery.min.js"></script>
     <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 

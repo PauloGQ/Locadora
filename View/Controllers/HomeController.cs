@@ -19,6 +19,15 @@ namespace View.Controllers
 
             return View(lst);
         }
+        public ActionResult ListaFilme()
+        {
+            //Instancia a controller de RN (SERVICE)
+            FilmeController controller = new FilmeController();
+
+            List<Filme> lst = controller.Listar();
+
+            return View(lst);
+        }
 
         public ActionResult Visualizar(int id)
         {

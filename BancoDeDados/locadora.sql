@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13-Nov-2019 às 21:23
+-- Tempo de geração: 14-Nov-2019 às 22:54
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.1.33
 
@@ -64,9 +64,10 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`IdCliente`, `Nome`, `DataNascimento`, `Email`, `Cpf`) VALUES
-(1, 'Paulo Vinícius Gomes de Queirós', '0001-01-01', 'paulogq@gmail.com', '07450879140'),
-(7, 'Larissa ', '1800-07-07', 'LariOtakaFedida@gmail.com', '696969696969'),
-(8, 'Giovanni Lima', '1996-08-08', 'giovanni.limag@gmail.com', '707070707070');
+(24, 'Gabriel José Resende Cesarini', '1999-10-16', 'gabriel@gmail.com', '012012301232'),
+(25, 'Paulo Vinícius Gomes de Queirós', '2000-05-16', 'paulo@gmail.com', '07450879140'),
+(28, 'Giovanni de Lima', '2000-05-16', 'giovanni@gmail.com', '07451465'),
+(29, 'Guilherme Lima', '1996-08-08', 'guilimag@gmail.com', '159654875');
 
 -- --------------------------------------------------------
 
@@ -77,21 +78,24 @@ INSERT INTO `cliente` (`IdCliente`, `Nome`, `DataNascimento`, `Email`, `Cpf`) VA
 CREATE TABLE `endereco` (
   `IdEndereco` int(11) NOT NULL,
   `Cep` varchar(10) NOT NULL,
-  `Logradouro` varchar(50) NOT NULL,
-  `Bairro` varchar(40) NOT NULL,
   `Cidade` varchar(20) NOT NULL,
+  `Estado` varchar(20) NOT NULL,
+  `Bairro` varchar(40) NOT NULL,
+  `Logradouro` varchar(50) NOT NULL,
   `Numero` varchar(10) NOT NULL,
   `Complemento` varchar(50) NOT NULL,
-  `Estado` varchar(20) NOT NULL,
-  `IdCliente` int(11) DEFAULT NULL
+  `IdClienteFkEndereco` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `endereco`
 --
 
-INSERT INTO `endereco` (`IdEndereco`, `Cep`, `Logradouro`, `Bairro`, `Cidade`, `Numero`, `Complemento`, `Estado`, `IdCliente`) VALUES
-(1, '72320301', 'Qi 416 conjunto 1', 'Samambaia', 'Brasilia', '208b', 'Residencal das Palmeiras', 'DF', 1);
+INSERT INTO `endereco` (`IdEndereco`, `Cep`, `Cidade`, `Estado`, `Bairro`, `Logradouro`, `Numero`, `Complemento`, `IdClienteFkEndereco`) VALUES
+(13, '72130123', 'Sobradinho', 'DF', 'Alagoinha', 'Qnq 45 casa 2', '104', 'Ao lado do shopping', 24),
+(14, '72320-301', 'Brasília', 'DF', 'Samambaia Norte', 'qi 416 conj 1', '208', 'Residencial das Palmeiras ', 25),
+(17, '72320-301', 'Brasília', 'DF', 'Vicente Pires', 'qi 416 conj 1', '156', 'Perto da Delegacia ', 28),
+(18, '72320-301', 'Brasília', 'DF', 'Vicente Pires', 'qi 416 conj 1', '123', 'Perto da Delegacia ', 29);
 
 -- --------------------------------------------------------
 
@@ -157,13 +161,6 @@ CREATE TABLE `locacao` (
   `NumeroLocacao` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Extraindo dados da tabela `locacao`
---
-
-INSERT INTO `locacao` (`IdLocacao`, `IdCliente`, `IdFilme`, `IdFuncionario`, `DataLocacao`, `DataEntrega`, `ValorLocacao`, `NumeroLocacao`) VALUES
-(1, 1, 2, 2, '2019-11-13', '2019-11-14', 'R$ 7,00', 1234);
-
 -- --------------------------------------------------------
 
 --
@@ -174,16 +171,19 @@ CREATE TABLE `telefone` (
   `IdTelefone` int(11) NOT NULL,
   `TipoTelefone` varchar(15) NOT NULL,
   `Ddd` varchar(4) NOT NULL,
-  `Numero` varchar(20) NOT NULL,
-  `IdCliente` int(11) DEFAULT NULL
+  `NumeroTel` varchar(20) NOT NULL,
+  `IdClienteFkTelefone` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Extraindo dados da tabela `telefone`
 --
 
-INSERT INTO `telefone` (`IdTelefone`, `TipoTelefone`, `Ddd`, `Numero`, `IdCliente`) VALUES
-(1, '55', '61', '981679773', 1);
+INSERT INTO `telefone` (`IdTelefone`, `TipoTelefone`, `Ddd`, `NumeroTel`, `IdClienteFkTelefone`) VALUES
+(14, 'telefone', '61', '33218181', 24),
+(15, 'Celular', '61', '981679773', 25),
+(18, 'Celular', '061', '123123123', 28),
+(19, 'Fixo', '061', '985453948', 29);
 
 --
 -- Índices para tabelas despejadas
@@ -206,7 +206,7 @@ ALTER TABLE `cliente`
 --
 ALTER TABLE `endereco`
   ADD PRIMARY KEY (`IdEndereco`),
-  ADD KEY `IdCliente` (`IdCliente`);
+  ADD KEY `IdCliente` (`IdClienteFkEndereco`);
 
 --
 -- Índices para tabela `filme`
@@ -235,7 +235,7 @@ ALTER TABLE `locacao`
 --
 ALTER TABLE `telefone`
   ADD PRIMARY KEY (`IdTelefone`),
-  ADD KEY `IdCliente` (`IdCliente`);
+  ADD KEY `IdCliente` (`IdClienteFkTelefone`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
@@ -251,13 +251,13 @@ ALTER TABLE `classificacao`
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `IdCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `IdCliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `endereco`
 --
 ALTER TABLE `endereco`
-  MODIFY `IdEndereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdEndereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `filme`
@@ -281,7 +281,7 @@ ALTER TABLE `locacao`
 -- AUTO_INCREMENT de tabela `telefone`
 --
 ALTER TABLE `telefone`
-  MODIFY `IdTelefone` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `IdTelefone` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Restrições para despejos de tabelas
@@ -291,7 +291,7 @@ ALTER TABLE `telefone`
 -- Limitadores para a tabela `endereco`
 --
 ALTER TABLE `endereco`
-  ADD CONSTRAINT `endereco_ibfk_1` FOREIGN KEY (`IdCliente`) REFERENCES `cliente` (`IdCliente`);
+  ADD CONSTRAINT `endereco_ibfk_1` FOREIGN KEY (`IdClienteFkEndereco`) REFERENCES `cliente` (`IdCliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `filme`
@@ -311,7 +311,7 @@ ALTER TABLE `locacao`
 -- Limitadores para a tabela `telefone`
 --
 ALTER TABLE `telefone`
-  ADD CONSTRAINT `telefone_ibfk_1` FOREIGN KEY (`IdCliente`) REFERENCES `cliente` (`IdCliente`);
+  ADD CONSTRAINT `telefone_ibfk_1` FOREIGN KEY (`IdClienteFkTelefone`) REFERENCES `cliente` (`IdCliente`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
