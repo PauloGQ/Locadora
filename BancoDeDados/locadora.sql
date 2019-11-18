@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 18-Nov-2019 às 05:54
+-- Tempo de geração: 18-Nov-2019 às 20:12
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.1.33
 
@@ -221,9 +221,9 @@ INSERT INTO `genero` (`IdGenero`, `GeneroFilme`) VALUES
 
 CREATE TABLE `locacao` (
   `IdLocacao` int(11) NOT NULL,
-  `IdCliente` int(11) DEFAULT NULL,
-  `IdFilme` int(11) DEFAULT NULL,
-  `IdFuncionario` int(11) DEFAULT NULL,
+  `IdClienteFkLocacao` int(11) DEFAULT NULL,
+  `IdFilmeFkLocacao` int(11) DEFAULT NULL,
+  `IdFuncionarioFkLocacao` int(11) DEFAULT NULL,
   `DataLocacao` date NOT NULL,
   `DataEntrega` date NOT NULL,
   `ValorLocacao` varchar(15) NOT NULL
@@ -233,8 +233,11 @@ CREATE TABLE `locacao` (
 -- Extraindo dados da tabela `locacao`
 --
 
-INSERT INTO `locacao` (`IdLocacao`, `IdCliente`, `IdFilme`, `IdFuncionario`, `DataLocacao`, `DataEntrega`, `ValorLocacao`) VALUES
-(2, 25, 1, 2, '2019-11-14', '2019-11-15', 'R$ 7,00');
+INSERT INTO `locacao` (`IdLocacao`, `IdClienteFkLocacao`, `IdFilmeFkLocacao`, `IdFuncionarioFkLocacao`, `DataLocacao`, `DataEntrega`, `ValorLocacao`) VALUES
+(2, 25, 1, 2, '2019-11-14', '2019-11-15', 'R$ 7,00'),
+(3, 24, 22, 2, '2019-11-18', '2019-11-19', 'R$ 7,00'),
+(13, 24, 7, 1, '2019-11-18', '2019-11-19', 'R$ 7,00'),
+(14, 24, 7, 1, '2019-11-18', '2019-11-19', 'R$ 7,00');
 
 -- --------------------------------------------------------
 
@@ -288,8 +291,8 @@ ALTER TABLE `endereco`
 --
 ALTER TABLE `filme`
   ADD PRIMARY KEY (`IdFilme`),
-  ADD KEY `IdClassificacao` (`IdClassificacaoFkFilme`),
-  ADD KEY `IdGeneroFkGenero` (`IdGeneroFkFilme`);
+  ADD KEY `filme_ibfk_1` (`IdClassificacaoFkFilme`),
+  ADD KEY `filme_ibfk_2` (`IdGeneroFkFilme`);
 
 --
 -- Índices para tabela `funcionario`
@@ -308,8 +311,9 @@ ALTER TABLE `genero`
 --
 ALTER TABLE `locacao`
   ADD PRIMARY KEY (`IdLocacao`),
-  ADD KEY `locacao_ibfk_1` (`IdCliente`),
-  ADD KEY `locacao_ibfk_2` (`IdFilme`);
+  ADD KEY `locacao_ibfk_1` (`IdClienteFkLocacao`),
+  ADD KEY `IdFuncionario` (`IdFuncionarioFkLocacao`),
+  ADD KEY `locacao_ibfk_2` (`IdFilmeFkLocacao`);
 
 --
 -- Índices para tabela `telefone`
@@ -350,7 +354,7 @@ ALTER TABLE `filme`
 -- AUTO_INCREMENT de tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  MODIFY `IdFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `IdFuncionario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de tabela `genero`
@@ -362,7 +366,7 @@ ALTER TABLE `genero`
 -- AUTO_INCREMENT de tabela `locacao`
 --
 ALTER TABLE `locacao`
-  MODIFY `IdLocacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `IdLocacao` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `telefone`
@@ -384,15 +388,16 @@ ALTER TABLE `endereco`
 -- Limitadores para a tabela `filme`
 --
 ALTER TABLE `filme`
-  ADD CONSTRAINT `filme_ibfk_1` FOREIGN KEY (`IdClassificacaoFkFilme`) REFERENCES `classificacao` (`IdClassificacao`),
-  ADD CONSTRAINT `filme_ibfk_2` FOREIGN KEY (`IdGeneroFkFilme`) REFERENCES `genero` (`IdGenero`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `filme_ibfk_1` FOREIGN KEY (`IdClassificacaoFkFilme`) REFERENCES `classificacao` (`IdClassificacao`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `filme_ibfk_2` FOREIGN KEY (`IdGeneroFkFilme`) REFERENCES `genero` (`IdGenero`);
 
 --
 -- Limitadores para a tabela `locacao`
 --
 ALTER TABLE `locacao`
-  ADD CONSTRAINT `locacao_ibfk_1` FOREIGN KEY (`IdCliente`) REFERENCES `cliente` (`IdCliente`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `locacao_ibfk_2` FOREIGN KEY (`IdFilme`) REFERENCES `filme` (`IdFilme`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `locacao_ibfk_1` FOREIGN KEY (`IdClienteFkLocacao`) REFERENCES `cliente` (`IdCliente`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `locacao_ibfk_2` FOREIGN KEY (`IdFilmeFkLocacao`) REFERENCES `filme` (`IdFilme`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `locacao_ibfk_3` FOREIGN KEY (`IdFuncionarioFkLocacao`) REFERENCES `funcionario` (`IdFuncionario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Limitadores para a tabela `telefone`
