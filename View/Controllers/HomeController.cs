@@ -38,7 +38,15 @@ namespace View.Controllers
 
             return View(lst);
         }
+        public ActionResult ListaLocacao()
+        {
+            //Instancia a controller de RN (SERVICE)
+            LocacaoController controller = new LocacaoController();
 
+            List<Locacao> lst = controller.Listar();
+
+            return View(lst);
+        }
         public ActionResult Visualizar(int id)
         {
             ClienteController controller = new ClienteController();
@@ -62,6 +70,13 @@ namespace View.Controllers
 
             return View(registro);
         }
+        public ActionResult VisualizarLocacao(int id)
+        {
+            LocacaoController controller = new LocacaoController();
+            var registro = controller.Buscar(id);
+
+            return View(registro);
+        }
 
         public ActionResult Inserir()
         {
@@ -72,6 +87,10 @@ namespace View.Controllers
             return View();
         }
         public ActionResult InserirFuncionario()
+        {
+            return View();
+        }
+        public ActionResult InserirLocacao()
         {
             return View();
         }
@@ -116,7 +135,19 @@ namespace View.Controllers
 
             return RedirectToAction("ListaFuncionario");
         }
+        [HttpPost]
+        public ActionResult InserirLocacao(Locacao registro)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(registro);
+            }
 
+            LocacaoController controller = new LocacaoController();
+            controller.Inserir(registro);
+
+            return RedirectToAction("ListaLocacao");
+        }
         public ActionResult Editar(int id)
         {
             ClienteController controller = new ClienteController();
@@ -127,6 +158,13 @@ namespace View.Controllers
         public ActionResult EditarFuncionario(int id)
         {
             FuncionarioController controller = new FuncionarioController();
+            var registro = controller.Buscar(id);
+
+            return View(registro);
+        }
+        public ActionResult EditarLocacao(int id)
+        {
+           LocacaoController controller = new LocacaoController();
             var registro = controller.Buscar(id);
 
             return View(registro);
@@ -157,6 +195,19 @@ namespace View.Controllers
 
             return RedirectToAction("ListaFuncionario");
         }
+        [HttpPost]
+        public ActionResult EditarLocacao(Locacao registro)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(registro);
+            }
+
+            LocacaoController controller = new LocacaoController();
+            controller.Atualizar(registro);
+
+            return RedirectToAction("ListaLocacao");
+        }
 
         public ActionResult Excluir(int id)
         {
@@ -168,6 +219,13 @@ namespace View.Controllers
         public ActionResult ExcluirFuncionario(int id)
         {
             FuncionarioController controller = new FuncionarioController();
+            var registro = controller.Buscar(id);
+
+            return View(registro);
+        }
+        public ActionResult ExcluirLocacao(int id)
+        {
+            LocacaoController controller = new LocacaoController();
             var registro = controller.Buscar(id);
 
             return View(registro);
@@ -188,6 +246,14 @@ namespace View.Controllers
             controller.Excluir(id);
 
             return RedirectToAction("ListaFuncionario");
+        }
+        [HttpPost, ActionName("ExcluirLocacao")]
+        public ActionResult ExcluirLocacaoConfirmar(int id)
+        {
+            LocacaoController controller = new LocacaoController();
+            controller.Excluir(id);
+
+            return RedirectToAction("ListaLocacao");
         }
     }
 }

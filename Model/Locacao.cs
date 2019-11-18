@@ -8,10 +8,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Model
 {
-    class Locacao
+    public class Locacao
     {
 
-        [Display(Name = "ID Endereço")]
+        [Display(Name = "ID Locacao")]
         public int IdLocacao { get; set; }
 
         [Display(Name = "ID Cliente")]
@@ -30,8 +30,15 @@ namespace Model
         public DateTime DataEntrega { get; set; }
 
         [Display(Name = "Valor")]
-        public string Valorlocacao { get; set; }
+        public string ValorLocacao { get; set; }
+        [Display(Name = "Cliente")]
+        public string Nome { get; set; }
+        [Display(Name = "Funcionário")]
+        public string NomeFuncionario { get; set; }
 
+
+        [Display(Name = "Filme")]
+        public string NomeFilme { get; set; }
 
     }
 }

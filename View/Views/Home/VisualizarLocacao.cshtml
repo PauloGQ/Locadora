@@ -1,0 +1,101 @@
+﻿@model Model.Locacao
+
+@{
+    ViewBag.Title = "VisualizarLocacao";
+}
+
+<h2>Detalhes da Locacao</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdLocacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdLocacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdClienteFkLocacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdClienteFkLocacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdFilmeFkLocacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdFilmeFkLocacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdFuncionarioFkLocacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdFuncionarioFkLocacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataLocacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataLocacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataEntrega)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataEntrega)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorLocacao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorLocacao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFuncionario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFuncionario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFilme)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFilme)
+        </dd>
+
+    </dl>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a href="@Url.Action("Index", "Home/ListaLocacao")"
+           class="btn btn-danger btn-icon-split ml-3">
+            <span class="text">Voltar</span>
+        </a>
+    </div>
+</div>

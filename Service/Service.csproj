@@ -63,6 +63,7 @@
     <Compile Include="ClienteController.cs" />
     <Compile Include="FilmeController.cs" />
     <Compile Include="FuncionarioController.cs" />
+    <Compile Include="LocacaoController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

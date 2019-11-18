@@ -160,6 +160,11 @@
     <Content Include="Views\Home\InserirFuncionario.cshtml" />
     <Content Include="Views\Home\EditarFuncionario.cshtml" />
     <Content Include="Views\Home\ExcluirFuncionario.cshtml" />
+    <Content Include="Views\Home\ListaLocacao.cshtml" />
+    <Content Include="Views\Home\VisualizarLocacao.cshtml" />
+    <Content Include="Views\Home\InserirLocacao.cshtml" />
+    <Content Include="Views\Home\EditarLocacao.cshtml" />
+    <Content Include="Views\Home\ExcluirLocacao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

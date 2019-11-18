@@ -53,7 +53,14 @@
 
 
             <li class="nav-item">
-                <a class="nav-link collapsed" href="@Url.Action("Index", "Home")">
+                <a class="nav-link collapsed" href="@Url.Action("ListaFilme", "Home")">
+                    <i class="fas fa-film"></i>
+                    <span>Filmes</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="@Url.Action("ListaLocacao", "Home")">
                     <i class="fas fa-users"></i>
                     <span>Locação</span>
                 </a>
@@ -61,14 +68,6 @@
 
             <!-- Item de Navegação - Locação -->
             <!-- Item de Navegação - Filme  -->
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="@Url.Action("ListaFilme", "Home")">
-                    <i class="fas fa-film"></i>
-                    <span>Filmes</span>
-                </a>
-            </li>
-
-
             <!-- Item de Navegação - Clientes -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="@Url.Action("Index", "Home")">
@@ -322,6 +321,17 @@
                 var id = $(this).attr("data-id");
                 $("#modal2").load("ExcluirFuncionario/" + id, function () {
                     $("#modal2").modal();
+                })
+            });
+        })
+    </script>
+
+    <script>
+        $(function () {
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal3").load("ExcluirLocacao/" + id, function () {
+                    $("#modal3").modal();
                 })
             });
         })
