@@ -27,10 +27,22 @@ namespace Model
         [Display(Name = "ID Classificação")]
         public int IdClassificacaoFkFilme { get; set; }
 
-        [Display(Name = "ID Genero")]
+        [Display(Name = "ID Gênero")]
         public int IdGeneroFkFilme { get; set; }
 
-        public byte[] Imagem { get; set; }
+        public Byte[]  Imagem { get; set; }
         public byte[] Cartaz { get; set; }
+
+        [Display(Name = "ID Genero")]
+        public int IdGenero { get; set; }
+
+        [Display(Name = "Gênero")]
+        public string GeneroFilme { get; set; }
+
+        [Display(Name = "ID Classificação")]
+        public int IdClassificacao { get; set; }
+        [Display(Name = "Classificação indicadiva")]
+        public string Classifica { get; set; }
+
     }
 }

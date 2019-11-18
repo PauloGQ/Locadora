@@ -1,0 +1,120 @@
+﻿@model Model.Filme
+
+@{
+    ViewBag.Title = "VisualizarFilme";
+}
+
+<h2>Detalhes do Filme</h2>
+
+    <hr />
+    <div class=" o-hidden border-0">
+        <div class="row">
+            <div class="col-xl-4 col-lg-5" style="max-width:500px; max-height:800px;">
+                <div class="card shadow mb-4">
+                    <!-- Card Header - Dropdown -->
+                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+
+                        <div class="text-gray-800">
+                            <h3 style="margin-top: 10px">@Html.DisplayFor(model => model.NomeFilme)</h3>
+                        </div>
+                    </div>
+
+                    <!-- Card Body -->
+                    @{
+                        var base64 = Convert.ToBase64String(Model.Cartaz);
+                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                    }
+
+                    <img class="gui-card__img" src='@imgSrc' />
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-5">
+                <dl class="dl-horizontal">
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IdFilme)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.IdFilme)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.NomeFilme)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.NomeFilme)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Sinopse)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Sinopse)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TempoDuracao)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TempoDuracao)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Ano)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Ano)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.GeneroFilme)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.GeneroFilme)
+                    </dd>
+                                       
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Classifica)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Classifica)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IdClassificacao)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.IdClassificacao)
+                    </dd>
+
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IdGeneroFkFilme)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.IdGeneroFkFilme)
+                    </dd>
+
+                    <div class="">
+                        <a href="@Url.Action("Index", "Home/ListaFilme")"
+                           class="btn btn-danger btn-icon-split mt-5">
+                            <span class="text">Voltar</span>
+                        </a>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+<p>
+   
+</p>

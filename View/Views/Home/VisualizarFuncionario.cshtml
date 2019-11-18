@@ -1,0 +1,53 @@
+﻿@model Model.Funcionario
+
+@{
+    ViewBag.Title = "VisualizarFuncionario";
+}
+
+<h2>Detalhes do Funcionario</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdFuncionario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdFuncionario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFuncionario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeFuncionario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailFuncionario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailFuncionario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Senha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Senha)
+        </dd>
+
+    </dl>
+    <a href="@Url.Action("Index", "Home/ListaFuncionario")"
+       class="btn btn-danger btn-icon-split ml-3">
+        <span class="text">Voltar</span>
+    </a>
+</div>
+
+
+        
+   

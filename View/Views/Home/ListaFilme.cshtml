@@ -6,7 +6,7 @@
 <link href="~/content/Style.css" rel="stylesheet">
 
 <h2 class="alert-dark text-center">
-    @Html.ActionLink("Cadastrar Novo Filme", "Create")
+    @Html.ActionLink("Cadastrar Novo Filme", "InserirFilme")
 </h2>
 
 <!-- SESSÃO DE FILMES DE ACÃO ID 2 -->
@@ -23,24 +23,26 @@
                 {
                     if (item.IdGeneroFkFilme == 2)
                     {
-                        <div class="gui-card">
-                            <div class="gui-card__media">
+                <div class="gui-card" href="@Url.Action("VisualizarFilme", "Home", new { id = item.IdFilme })">
+                    <div class="gui-card__media">
+                        <td>
+                            @{
+                                var base64 = Convert.ToBase64String(item.Imagem);
+                                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                            }
 
-                                <td>
-                                    @{
-                                        var base64 = Convert.ToBase64String(item.Imagem);
-                                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                                    }
-                                    <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
-                                </td>
-
-                            </div>
-                            <div class="gui-card__details">
-                                <div class="gui-card__title">
-                                    @Html.DisplayFor(modelItem => item.NomeFilme)
-                                </div>
-                            </div>
-                        </div>
+                            <img class="gui-card__img " src='@imgSrc' style="max-width:700px; max-height:438px;" />
+                        </td>
+                    </div>
+                    <div class="gui-card__details">
+                        <a href="@Url.Action("VisualizarFilme", "Home", new { id = item.IdFilme })" class="btn btn-circle centralizar2">
+                           
+                        </a>
+                    </div>
+                    <div class="gui-card__title">
+                        @Html.DisplayFor(modelItem => item.NomeFilme)
+                    </div>
+                </div>
                     }
                 }
 
@@ -68,24 +70,27 @@
                 {
                     if (item.IdGeneroFkFilme == 1)
                     {
-                        <div class="gui-card">
-                            <div class="gui-card__media">
+                <div class="gui-card">
+                    <div class="gui-card__media">
 
-                                <td>
-                                    @{
-                                        var base64 = Convert.ToBase64String(item.Imagem);
-                                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                                    }
-                                    <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
-                                </td>
+                        <td>
+                            @{
+                                var base64 = Convert.ToBase64String(item.Imagem);
+                                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                            }
+                            <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
+                        </td>
 
-                            </div>
-                            <div class="gui-card__details">
-                                <div class="gui-card__title">
-                                    @Html.DisplayFor(modelItem => item.NomeFilme)
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="gui-card__details">
+                        <a href="@Url.Action("VisualizarFilme", "Home", new { id = item.IdFilme })" class="btn btn-circle centralizar2">
+
+                        </a>
+                    </div>
+                    <div class="gui-card__title">
+                        @Html.DisplayFor(modelItem => item.NomeFilme)
+                    </div>
+                </div>
                     }
                 }
 
@@ -112,24 +117,27 @@
                 {
                     if (item.IdGeneroFkFilme == 3)
                     {
-                        <div class="gui-card">
-                            <div class="gui-card__media">
+                <div class="gui-card">
+                    <div class="gui-card__media">
 
-                                <td>
-                                    @{
-                                        var base64 = Convert.ToBase64String(item.Imagem);
-                                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                                    }
-                                    <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
-                                </td>
+                        <td>
+                            @{
+                                var base64 = Convert.ToBase64String(item.Imagem);
+                                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                            }
+                            <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
+                        </td>
 
-                            </div>
-                            <div class="gui-card__details">
-                                <div class="gui-card__title">
-                                    @Html.DisplayFor(modelItem => item.NomeFilme)
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="gui-card__details">
+                        <a href="@Url.Action("VisualizarFilme", "Home", new { id = item.IdFilme })" class="btn btn-circle centralizar2">
+
+                        </a>
+                    </div>
+                    <div class="gui-card__title">
+                        @Html.DisplayFor(modelItem => item.NomeFilme)
+                    </div>
+                </div>
                     }
                 }
 
@@ -156,28 +164,33 @@
                 {
                     if (item.IdGeneroFkFilme == 4)
                     {
-                        <div class="gui-card">
-                            <div class="gui-card__media">
+                        <a href="@Url.Action("VisualizarFilme", "Home", new { id = item.IdFilme })" class="">
+                            <div class="gui-card">
+                                <div class="gui-card__media">
 
-                                <td>
-                                    @{
-                                        var base64 = Convert.ToBase64String(item.Imagem);
-                                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                                    }
-                                    <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
-                                </td>
+                                    <td>
+                                        @{
+                                            var base64 = Convert.ToBase64String(item.Imagem);
+                                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                                        }
+                                        <img class="gui-card__img" src='@imgSrc' style="max-width:700px; max-height:438px;" />
+                                    </td>
 
-                            </div>
-                            <div class="gui-card__details">
+                                </div>
+                                <div class="gui-card__details">
+                                    <a href="@Url.Action("VisualizarFilme", "Home", new { id = item.IdFilme })" class="btn btn-circle centralizar2">
+
+                                    </a>
+                                </div>
                                 <div class="gui-card__title">
                                     @Html.DisplayFor(modelItem => item.NomeFilme)
-                                </div>
+                                </div>  
                             </div>
-                        </div>
-                    }
-                }
+                            </a>
+                            }
+                            }
 
-            </div>
+                    </div>
         </div>
         <span onmouseover="scrollDireita3()" onmouseout="clearScroll3()" class="handle handleNext active">
             <i class="fa fa-caret-right centralizar" aria-hidden="true"></i>

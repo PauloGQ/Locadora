@@ -50,6 +50,15 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+
+
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="@Url.Action("Index", "Home")">
+                    <i class="fas fa-users"></i>
+                    <span>Locação</span>
+                </a>
+            </li>
+
             <!-- Item de Navegação - Locação -->
             <!-- Item de Navegação - Filme  -->
             <li class="nav-item">
@@ -60,7 +69,6 @@
             </li>
 
 
-
             <!-- Item de Navegação - Clientes -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="@Url.Action("Index", "Home")">
@@ -69,12 +77,15 @@
                 </a>
             </li>
 
+
             <li class="nav-item">
-                <a class="nav-link collapsed" href="@Url.Action("Index", "Home")">
-                    <i class="fas fa-users"></i>
-                    <span>Locação</span>
+                <a class="nav-link collapsed" href="@Url.Action("ListaFuncionario", "Home")">
+                    <i class="fas fa-user"></i>
+                    <span>Funcionários</span>
                 </a>
             </li>
+
+
 
 
             <!-- Divider -->
@@ -304,6 +315,18 @@
             });
         })
     </script>
+
+    <script>
+        $(function () {
+            $(".delete").click(function () {
+                var id = $(this).attr("data-id");
+                $("#modal2").load("ExcluirFuncionario/" + id, function () {
+                    $("#modal2").modal();
+                })
+            });
+        })
+    </script>
+
 
     <!--
     <script type="text/javascript">

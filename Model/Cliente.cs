@@ -10,7 +10,7 @@ namespace Model
 
     public class Cliente
     {
-        [Display(Name = "Código")]
+        [Display(Name = "ID Cliente")]
         public int IdCliente { get; set; }
 
         [Display(Name = "Nome Completo")]

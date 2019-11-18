@@ -49,7 +49,7 @@ namespace Service
             }
         }
 
-        public Cliente Buscar(int id)
+        public Filme Buscar(int id)
         {
             string strConexao = "SERVER=localhost; DataBase=locadora; UID=root; pwd=";
 
@@ -60,37 +60,32 @@ namespace Service
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
 
-                    string query = $"SELECT * FROM cliente c JOIN telefone t ON c.IdCliente = t.IdClienteFkTelefone JOIN endereco e ON c.IdCliente = e.IdClienteFkEndereco WHERE c.IdCliente = {id}";
+                    string query = $"SELECT * FROM filme f JOIN genero g ON f.IdGeneroFkFilme = g.IdGenero JOIN classificacao c ON f.IdClassificacaoFkFilme = c.IdClassificacao WHERE f.IdFilme = {id}";
 
                     cmd.Connection = conn;
                     cmd.CommandText = query;
 
                     MySqlDataReader reader = cmd.ExecuteReader();
 
-                    Cliente retorno = new Cliente();
+                    Filme retorno = new Filme();
 
                     while (reader.Read())
                     {
 
-                        retorno.IdCliente = (int)reader["IdCliente"];
-                        retorno.Nome = (string)reader["Nome"];
-                        retorno.DataNascimento = (DateTime)reader["DataNascimento"];
-                        retorno.Email = (string)reader["Email"];
-                        retorno.Cpf = (string)reader["Cpf"];
-                        retorno.IdTelefone = (int)reader["IdTelefone"];
-                        retorno.TipoTelefone = (string)reader["TipoTelefone"];
-                        retorno.Ddd = (string)reader["Ddd"];
-                        retorno.NumeroTel = (string)reader["NumeroTel"];
-                        retorno.IdClienteFkTelefone = (int)reader["IdClienteFkTelefone"];
-                        retorno.IdEndereco = (int)reader["IdEndereco"];
-                        retorno.Cep = (string)reader["Cep"];
-                        retorno.Cidade = (string)reader["Cidade"];
-                        retorno.Estado = (string)reader["Estado"];
-                        retorno.Bairro = (string)reader["Bairro"];
-                        retorno.Logradouro = (string)reader["Logradouro"];
-                        retorno.Numero = (string)reader["Numero"];
-                        retorno.Complemento = (string)reader["Complemento"];
-                        retorno.IdClienteFkEndereco = (int)reader["IdClienteFkEndereco"];
+                        retorno.IdFilme = (int)reader["IdFilme"];
+                        retorno.NomeFilme = (string)reader["NomeFilme"];
+                        retorno.Sinopse = (string)reader["Sinopse"];
+                        retorno.TempoDuracao = (string)reader["TempoDuracao"];
+                        retorno.Ano = (string)reader["Ano"];
+                        retorno.Imagem = (byte[])reader["Imagem"];
+                        retorno.Cartaz = (byte[])reader["Cartaz"];
+                        retorno.IdClassificacaoFkFilme = (int)reader["IdClassificacaoFkFilme"];
+                        retorno.IdGeneroFkFilme = (int)reader["IdGeneroFkFilme"];
+                        retorno.IdGenero = (int)reader["IdGenero"];
+                        retorno.GeneroFilme = (string)reader["GeneroFilme"];
+                        retorno.IdClassificacao = (int)reader["IdClassificacao"];
+                        retorno.Classifica = (string)reader["Classifica"];
+
 
                     }
 
@@ -99,7 +94,7 @@ namespace Service
             }
         }
 
-        public void Inserir(Cliente registro)
+        public void Inserir(Filme registro)
         {
             string strConexao = "SERVER=localhost; DataBase=locadora;Allow User Variables=True; UID=root; pwd=";
 
@@ -109,8 +104,9 @@ namespace Service
 
                 using (MySqlCommand cmd = new MySqlCommand())
                 {
-                    string query = $"INSERT INTO cliente (IdCliente, Nome, DataNascimento, Email, Cpf ) VALUES ('{registro.IdCliente}', '{registro.Nome}', '{registro.DataNascimento:yyyy-MM-dd}', '{registro.Email}', '{registro.Cpf}'); SET @var = LAST_INSERT_ID(); INSERT INTO telefone(IdTelefone, TipoTelefone, Ddd, NumeroTel, IdClienteFkTelefone) VALUES('{registro.IdTelefone}', '{registro.TipoTelefone}', '{registro.Ddd}', '{registro.NumeroTel}', @var); INSERT INTO endereco(IdEndereco, Cep, Cidade, Estado, Bairro, Logradouro, Numero, Complemento, IdClienteFkEndereco) VALUES('{registro.IdEndereco}', '{registro.Cep}', '{registro.Cidade}', '{registro.Estado}', '{registro.Bairro}', '{registro.Logradouro}', '{registro.Numero}', '{registro.Complemento}', @var);";
-
+                    
+                    string query = $"INSERT INTO filme(IdFilme, NomeFilme, Sinopse, TempoDuracao, Ano, IdClassificacaoFkFilme, IdGeneroFkFilme, Imagem, Cartaz) VALUES ('{registro.IdFilme}', '{registro.NomeFilme}', '{registro.Sinopse}', '{registro.TempoDuracao}', '{registro.Ano}' , '{registro.IdClassificacaoFkFilme}', '{registro.IdGeneroFkFilme}', '{registro.Imagem} '{registro.Cartaz}');";
+                    
                     cmd.Connection = conn;
                     cmd.CommandText = query;
                     cmd.ExecuteNonQuery();

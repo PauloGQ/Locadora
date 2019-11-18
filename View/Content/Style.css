@@ -2,7 +2,6 @@
 
 
 body,
-
 * {
     box-sizing: border-box;
 }
@@ -71,7 +70,7 @@ a:hover {
         height: 150px;
         bottom: 0;
         z-index: 20;
-        width: 4%;
+        width: 2.6%;
         text-align: center;
         -webkit-box-pack: center;
         -webkit-justify-content: center;
@@ -89,6 +88,16 @@ a:hover {
 
     .slider .centralizar {
         margin-top: 60px;
+    }
+
+    .slider .centralizar2 {
+        margin-top: 50px;
+        margin-left: 105px;
+        border: 3px solid #ecf0f1;
+        line-height: 50px;
+        text-align: center;
+        border-radius: 100%;
+        background: rgba(0,0,0,0.5);
     }
 
 
@@ -157,30 +166,8 @@ a:hover {
         display: #000;
     }
 
-    .gui-card__details:after {
-        margin-top: -25px;
-        margin-left: -25px;
-        width: 50px;
-        height: 50px;
-        border: 3px solid #ecf0f1;
-        line-height: 50px;
-        text-align: center;
-        border-radius: 100%;
-        background: rgba(0,0,0,0.5);
-        z-index: 1;
-    }
-/*
-    .gui-card__details:before {
-        content: '▶';
-        left: 0;
-        width: 100%;
-        font-size: 30px;
-        margin-left: 7px;
-        margin-top: -13px;
-        text-align: center;
-        z-index: 2;
-    }
-    */
+
+
 .gui-card:hover .gui-card__details {
     opacity: 1;
 }
@@ -189,6 +176,8 @@ a:hover {
     position: absolute;
     bottom: 0;
     padding: 10px;
+    font-size: 15px;
+    text-shadow: 5px 5px 5px rbga(0,0,0,0.5);
 }
 
 .row__inner:hover {

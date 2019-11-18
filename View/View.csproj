@@ -153,6 +153,13 @@
     <Content Include="Views\Home\Visualizar.cshtml" />
     <Content Include="Views\Home\Excluir.cshtml" />
     <Content Include="Views\Home\ListaFilme.cshtml" />
+    <Content Include="Views\Home\VisualizarFilme.cshtml" />
+    <Content Include="Views\Home\InserirFilme.cshtml" />
+    <Content Include="Views\Home\ListaFuncionario.cshtml" />
+    <Content Include="Views\Home\VisualizarFuncionario.cshtml" />
+    <Content Include="Views\Home\InserirFuncionario.cshtml" />
+    <Content Include="Views\Home\EditarFuncionario.cshtml" />
+    <Content Include="Views\Home\ExcluirFuncionario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
